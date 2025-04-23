@@ -1,0 +1,22 @@
+{
+    "name": "PlatformIO Development Container",
+    "image": "python:3.13-slim",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "platformio.platformio-ide"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "mounts": [
+        // TODO: Check if the /dev/tty0 is being accessed correctly
+        "source=/dev/,target=/dev/,type=bind,consistency=consistent"
+    ],
+    "runArgs": [
+        "--privileged"
+    ]
+}
